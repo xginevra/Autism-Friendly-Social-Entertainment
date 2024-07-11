@@ -36,4 +36,4 @@ jobs:
     - name: Run tests
       run: |
         cd app
-        pytest test_main.py
+        pytest test_main1.py
