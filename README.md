@@ -55,3 +55,4 @@ should we even stick to sqlite?
 2. infrastructure (docker containers will do the trick, do not forget to remove pandas from the requirements)
 3. Miro board easy task organization (see above)
 
+That was a good semester.
