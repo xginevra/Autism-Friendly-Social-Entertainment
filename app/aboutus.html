@@ -12,43 +12,71 @@
     <div class="content">
         <div class="navbar">
             <div class="navbarlogo">
-                <img src="/static/images/zebrate_logo(orange).png" alt="Zebrate">
+                <a href="/">
+                    <img src="/static/images/zebrate_logo(orange).png" alt="Zebrate" style="cursor: pointer;">
+                </a>
             </div>
             <div class="contentsearchbox searchboxsmall">
-                <input type="text" id="inputbox" placeholder="Search locations..." autocomplete="off" style="width: 180px; height: 60%;">
-                <button style="font-size: 13px; height: 43px;">Search</button>
+                <form action="/discover" method="get">
+                    <input type="text" id="inputbox" name="query" placeholder="Search locations..." autocomplete="off" style="width: 180px; height: 60%;">
+                    <button type="submit" style="font-size: 13px; height: 43px;">Search</button>
+                </form>
             </div>
             <div class="navbarbtn">
                 <a href="/discover">Discover</a>
                 <!--<a href="/static/review.html">Review</a>-->
-                <a href="/static/signup.html">Sign up</a>
-                <a class="button" href="/login">Log in</a>
+                {% if user %}
+                    <a href="/logout">Log out</a>
+                    <a class="button" href="/welcome">My account</a>
+                {% else %}
+                    <a href="/static/signup.html">Sign up</a>
+                    <a class="button" href="/login">Log in</a>
+                {% endif %}
             </div>
         </div>
     </div>
-    <div  class="content homecontent contactabout">
+    <div  class="content homecontent contactabout" style="height: auto; padding-top: 20px; padding-bottom: 40px;">
         
-        <p> <span style="font-size: 50px; font-weight: 500;">About us</span><br><br>
-            We are a team of four Health Informatics B.Sc. students from Technische Hochschule Deggendorf (THD). <br><br> 
-            Our vision is to help autistic children feel more comfortable and less stressed in a world that is designed for the neurotypical mind. <br><br>
-            We aim to achieve this by helping parents and caregivers of autistic children in Rottal-Inn, find social entertainment venues, suited to their child’s specific needs and requirements.
-        </p>
-        
+<p><span style="font-size: 50px; font-weight: 500;">About us</span><br><br>
+
+    We are Ali Badran, Franziska Wojtkowski, Paya Karimi, and Paniz Ziaie, 4th semester health 
+    informatics students leveraging our expertise in healthcare, technology, business management,
+    and user experience design to improve the quality of life for individuals with autism and 
+    their families.
+    <br><br>
+    Our vision is to help autistic children feel more comfortable and less stressed in a 
+            world that is designed for the neurotypical mind. <br><br>
+            We aim to achieve this by helping parents and caregivers of autistic children in 
+            Rottal-Inn, find social entertainment venues, suited to their child's specific needs 
+            and requirements.
+<br><br>
+    This project is vital as it addresses the 
+    significant challenges faced by autistic children and their families in finding appropriate 
+    venues, fostering an inclusive society where every child can participate in everyday 
+    activities without barriers. We offer a platform with tailored sensory filters, real-time 
+    updates, community reviews, and custom venue requests, ensuring a comfortable, enjoyable, 
+    and inclusive environment for all.
+</p>
     </div>
 
     <div class="footer">
         <div class="mainfooter">
-            <img class="footerpic" src="/static/images/zebrate_logo(orange).png" alt="Zebrate">
+            <a href="/">
+                <img src="/static/images/zebrate_logo(orange).png" alt="Zebrate" style="cursor: pointer;">
+            </a>
             <div style="margin-top: 40px; margin-bottom: 0;">
-                <a href="/static/discover.html">Discover</a>
-                <a href="/static/review.html">Review</a>
-                <a href="/static/contactus.html">Contact Us</a>
-                <a href="/static/aboutus.html">About Us</a>
+                <a href="/discover">Discover</a>
+                <a href="/contactus">Contact Us</a>
+                <a href="/aboutus">About Us</a>
+                {% if user %}
+                <a href="/welcome">Account</a>
+                {% else %}
                 <a href="/login">Account</a>
+                {% endif %}
             </div>
         </div>
         <div>
-            <p class="rights">©Zebrate 2024 - All rights reserved</p>
+            <p class="rights">Zebrate 2024 - All rights reserved</p>
         </div>
     </div>
     
